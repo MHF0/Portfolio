@@ -7053,7 +7053,7 @@ textarea.form-control-lg {
 }
 
 .d-block {
-  display: block !important;
+  display: block;
 }
 
 .d-grid {
@@ -8861,7 +8861,7 @@ textarea.form-control-lg {
     display: inline-block !important;
   }
   .d-md-block {
-    display: block !important;
+    display: block ;
   }
   .d-md-grid {
     display: grid !important;

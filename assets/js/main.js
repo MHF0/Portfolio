@@ -251,3 +251,35 @@
    */
   new PureCounter();
 })();
+
+const form = document.querySelector("#emailForm");
+
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  const data = {
+    email: document.querySelector("#email").value,
+    subject: document.querySelector("#subject").value,
+    message: document.querySelector("#message").value,
+    who: "mhamadhfarhan@gmail.com",
+    name: document.querySelector("#name").value,
+  };
+
+  const loading = document.querySelector(".loading");
+  const sentMessage = document.querySelector(".sent-message");
+
+  loading.style.display = "block";
+  sentMessage.style.display = "none";
+
+  fetch("https://nodejsenderemail.herokuapp.com/api/sendEmail", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  }).then((res) => {
+    res.json();
+    loading.style.display = "none";
+    sentMessage.style.display = "block";
+  });
+});
