@@ -271,7 +271,7 @@ form.addEventListener("submit", (event) => {
   loading.style.display = "block";
   sentMessage.style.display = "none";
 
-  fetch("https://nodejsenderemail.herokuapp.com/api/sendEmail", {
+  fetch(form.action, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
